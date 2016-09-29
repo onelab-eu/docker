@@ -17,7 +17,7 @@ data_dir=/var/lib/sfa/
 enabled=true
 host=localhost
 port=6080
-root_auth=plc
+root_auth=onelab
 
 [sfa_sm]
 enabled=false
