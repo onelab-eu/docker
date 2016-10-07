@@ -5,8 +5,6 @@
 TEMP=`getopt -o e:p:r: --long email:,password:,root-authority: -n 'registry_init.sh' -- "$@"`
 eval set -- "$TEMP"
 
-echo $TEMP
-
 while true ; do
     case "$1" in
         -e|--email)
