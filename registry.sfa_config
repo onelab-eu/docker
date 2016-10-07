@@ -33,7 +33,7 @@ caching=true
 
 [sfa_db]
 enabled=true
-host=localhost
+host=db
 port=5432
 user=sfadbuser
 password=d09c36b6-1efd-4f16-96bb-0519b0e7c614
