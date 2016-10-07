@@ -27,7 +27,7 @@ while true ; do
     esac
 done
 ROOT_AUT=$ROOT_AUTHORITY
-ROOT_AUTHORITY+=".myslice"
+ROOT_AUTHORITY=$ROOT_AUTHORITY".myslice"
 
 echo "pass = $ADMIN_PASSWORD"
 echo "email = $ADMIN_EMAIL"
