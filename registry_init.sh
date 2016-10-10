@@ -47,6 +47,7 @@ else
     mkdir /etc/sfa/root_certificate
     cd /etc/sfa/root_certificate
     sfaadmin.py cert export onelab
+    sfaadmin.py cert export onelab.myslice
     touch /root/docker/initialized
     echo "SFA was already initialized, to reinitialize it, pls remove this file" > /root/docker/initialized
 fi
