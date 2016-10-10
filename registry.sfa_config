@@ -35,7 +35,7 @@ caching=true
 enabled=true
 host=db
 port=5432
-user=sfadbuser
+user=docker
 password=d09c36b6-1efd-4f16-96bb-0519b0e7c614
 name=sfa
 
