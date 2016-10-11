@@ -33,20 +33,19 @@ else
             *) echo "Internal error!" ; exit 1 ;;
         esac
     done
-    ROOT_AUT=$ROOT_AUTHORITY
-    ROOT_AUTHORITY=$ROOT_AUTHORITY".myslice"
+    ADMIN_USER=$ROOT_AUTHORITY".myslice"
 
     echo "pass = $ADMIN_PASSWORD"
     echo "email = $ADMIN_EMAIL"
     echo "auth = $ROOT_AUTHORITY"
-    echo "root = $ROOT_AUT"
+    echo "admin = $ADMIN_USER"
 
     sfaadmin.py reg import_registry
-    sfaadmin.py reg register -t user -x $ROOT_AUTHORITY -e $ADMIN_EMAIL -k /var/myslice/myslice.pub
-    sfaadmin.py reg update -t authority -x $ROOT_AUT -p $ROOT_AUTHORITY
+    sfaadmin.py reg register -t user -x $ADMIN_USER -e $ADMIN_EMAIL -k /var/myslice/myslice.pub
+    sfaadmin.py reg update -t authority -x $ROOT_AUTHORITY -p $ADMIN_USER
     mkdir /etc/sfa/root_certificate
     cd /etc/sfa/root_certificate
-    sfaadmin.py cert export $ROOT_AUT
+    sfaadmin.py cert export $ADMIN_USER
     sfaadmin.py cert export $ROOT_AUTHORITY
     touch /root/docker/initialized
     echo "SFA was already initialized, to reinitialize it, pls remove this file" > /root/docker/initialized
