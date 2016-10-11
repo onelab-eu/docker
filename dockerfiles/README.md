@@ -1,4 +1,4 @@
-# Here we will have an istruction/script on populating Docker images 
+# Populating Docker images 
 
 * On Ubuntu 14.04:
 
