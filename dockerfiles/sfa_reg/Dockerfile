@@ -40,23 +40,6 @@ RUN cd /root/sfa \
         && python setup.py install --install-scripts=/usr/bin \
         && cd /root/
 
-# Configure SFA 
-RUN cp /root/docker/registry.sfa_config /etc/sfa/sfa_config \
-        && mkdir /var/myslice/ \
-        && ssh-keygen -f /var/myslice/myslice -t rsa -N ''
-
-# Initialise DB
-# ?? Do I need something here? 
-
-
-# Initialize SFA
-# THIS GOES NOW TO THE EXTERNAL SCRIPT
-#RUN echo "Admin email = " && echo $admin_email
-#RUN /usr/bin/sfa-start.py -t -d \ 
-#       && /usr/bin/sfa-start.py -r -d \
-#       && /usr/bin/sfa-start.py -a -d \
-#       && cd /root/docker \
-#       && sh registry_init.sh -e $admin_email -p $admin_password -r $root_auithority
 
 #Exported volumes (we need an axxcess to those files for other Docker containers, should we share as volumes?)
 
