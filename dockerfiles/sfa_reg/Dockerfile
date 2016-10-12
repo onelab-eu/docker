@@ -43,7 +43,7 @@ RUN cd /root/sfa \
 
 #Exported volumes (we need an axxcess to those files for other Docker containers, should we share as volumes?)
 
-VOLUME  ["/etc/sfa/root_certificate", "/var/myslice", "/root/docker/", "/var/log/"]
+VOLUME  ["/etc/sfa/root_certificate"]
 
 EXPOSE 6080:6080 
 
