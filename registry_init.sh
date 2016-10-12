@@ -45,7 +45,7 @@ else
     sfaadmin.py reg update -t authority -x $ROOT_AUTHORITY -p $ADMIN_USER
     mkdir /etc/sfa/root_certificate
     cd /etc/sfa/root_certificate
-    sfaadmin.py cert export $ADMIN_USER
+    sfaadmin.py cert export $ADMIN_USER -o myslice.cert
     sfaadmin.py cert export $ROOT_AUTHORITY
     touch /root/docker/initialized
     echo "SFA was already initialized, to reinitialize it, pls remove this file" > /root/docker/initialized
