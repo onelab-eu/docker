@@ -5,13 +5,13 @@ if [ -f $FILE ];
 then
    echo "WEB was already initialized, to reinitialize it (experimental), please remove file /root/docker/web_initialized"
    #As deamon 
-   /home/radomir/myslice/myslice/bin/myslice-live &
+   /root/myslice/myslice/bin/myslice-live &
    #As deamon 
-   /home/radomir/myslice/myslice/bin/myslice-monitor &
+   /root/myslice/myslice/bin/myslice-monitor &
    # As deamon 
-   /home/radomir/myslice/myslice/bin/myslice-server &
+   /root/myslice/myslice/bin/myslice-server &
    #As deamon
-   /home/radomir/myslice/myslice/bin/myslice-web &
+   /root/myslice/myslice/bin/myslice-web &
 
 else
    cd /var/myslice
@@ -20,13 +20,13 @@ else
    echo "bind=all" > /etc/rethinkdb/instances.d/myslice.conf 
    #STart 
    /etc/init.d/rethinkdb start
-   /home/radomir/myslice/myslice/bin/myslice-live &
+   /root/myslice/myslice/bin/myslice-live &
    #As deamon 
-   /home/radomir/myslice/myslice/bin/myslice-monitor &
+   /root/myslice/myslice/bin/myslice-monitor &
    # As deamon 
-   /home/radomir/myslice/myslice/bin/myslice-server &
+   /root/myslice/myslice/bin/myslice-server &
    #As deamon
-   /home/radomir/myslice/myslice/bin/myslice-web &
+   /root/myslice/myslice/bin/myslice-web &
 
 fi 
 
