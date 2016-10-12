@@ -18,6 +18,7 @@ RUN apt-get update \
         && curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" \
         && python3.5 get-pip.py
 
+RUN apt-get -y install libffi-dev libffi6
 
 #Installing RethinkDB 
 RUN echo "deb http://download.rethinkdb.com/apt trusty main" > /etc/apt/sources.list.d/rethinkdb.list \
@@ -36,9 +37,6 @@ RUN cd /root/ \
 
 # Here we need to configure pkey and cert:
 
-
-
-RUN apt-get -y install libffi-dev libffi6
 
 # INSTALLING myslice #
 RUN echo "Installing myslice" \
