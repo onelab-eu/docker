@@ -17,7 +17,9 @@ else
    cd /var/myslice
    cp /etc/sfa/root_certificate/myslice.cert myslice.cert
    cp /etc/sfa/root_certificate/myslice.pkey myslice.pkey
+   echo "bind=all" > /etc/rethinkdb/instances.d/myslice.conf 
    #STart 
+   /etc/init.d/rethinkdb start
    /home/radomir/myslice/myslice/bin/myslice-live &
    #As deamon 
    /home/radomir/myslice/myslice/bin/myslice-monitor &
