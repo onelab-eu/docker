@@ -36,11 +36,6 @@ RUN cd /root/ \
 
 # Here we need to configure pkey and cert:
 
-RUN mkdir /var/myslice \
-        && cd /var/myslice \
-        && touch myslice.pkey \
-        && touch myslice.cert
-# TODO ^^^^^^^^^^^^^^^^^^^^^^^^ this creates only empty files !! to be fixed
 
 
 RUN apt-get -y install libffi-dev libffi6
@@ -61,5 +56,4 @@ RUN echo "Installing myslice" \
         && npm i -g webpack \
         && webpack
 
-# TODO configure ~/myslice/myslice/__init__.py
-# TODO configure link between this docker and SFA_reg
+
