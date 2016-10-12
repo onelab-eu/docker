@@ -54,4 +54,6 @@ RUN echo "Installing myslice" \
         && npm i -g webpack \
         && webpack
 
-RUN git clone https://github.com/onelab-eu/docker.git
+RUN cd /root/ && git clone https://github.com/onelab-eu/docker.git
+
+ENTRYPOINT /bin/bash /root/docker/web_start.sh
