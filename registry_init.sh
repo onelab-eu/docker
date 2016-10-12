@@ -47,6 +47,7 @@ else
     cd /etc/sfa/root_certificate
     sfaadmin.py cert export $ADMIN_USER -o myslice.cert
     sfaadmin.py cert export $ROOT_AUTHORITY
+    cp /var/myslice/myslice myslice.pkey
     touch /root/docker/initialized
     echo "SFA was already initialized, to reinitialize it, pls remove this file" > /root/docker/initialized
 fi
