@@ -2,6 +2,9 @@
 
 ## On Ubuntu 14.04:
 
+Generally it is very simple, however there are some important remarks in the scripts below (like sharing volumes between containers), so please read carefully, or just copy/paste. 
+
+IMPORTANT: It is strongly recommended to install them for developement purposes only. If you want to run your service on production environment you should deploy and configure it manually on VM or adjust provided docker files.
 
 ```bash
 sudo su -
@@ -21,4 +24,24 @@ myslice/sfa_reg_pg   latest              02611e2e3276        About a minute ago 
 Run it:
 ``` bash
 docker run -P -d --name sfa_reg_pg myslice/sfa_reg_pg
+```
+You can check by connecting to PSQL DB:
+```bash
+psql -p <port_number> -h localhost -U docker sfa # replace <port_number> with one returned by docker ps command
 ``` 
+
+Build second container:
+```bash
+cd ~/docker/dockerfiles/sfa_reg
+docker build -t myslice/sfa_reg:latest .
+```
+To run this docker you need to set 3 environmental variables that will be used in a script to configure your myslice copy:
+$ROOT_AUTHORITY - [a-z] only! No special chars, nod dots, no spaces, no dash etc. are allowed. I.e.: myorganizationname
+$ADMIN_EMAIL 
+$ADMIN_PASSWORD 
+Script will automatically set ADMIN_USER as $ROOT_AUTHORITY+".myslice" 
+
+```bash
+docker run --name sfa_reg --link sfa_reg_pg:db -p 6080:6080 -d -e "ADMIN_EMAIL=fake@fake.com" -e "ROOT_AUTHORITY=myorganizationname" -e "ADMIN_PASSWORD=test12345"  myslice/sfa_reg 
+```
+During first run we will populate DB 
