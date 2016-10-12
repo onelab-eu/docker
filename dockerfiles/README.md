@@ -44,4 +44,20 @@ Script will automatically set ADMIN_USER as $ROOT_AUTHORITY+".myslice"
 ```bash
 docker run --name sfa_reg --link sfa_reg_pg:db -p 6080:6080 -d -e "ADMIN_EMAIL=fake@fake.com" -e "ROOT_AUTHORITY=myorganizationname" -e "ADMIN_PASSWORD=test12345"  myslice/sfa_reg 
 ```
-During first run we will populate DB 
+During first run DB will be popluated automaticaly
+
+Next we can start to build web_myslice 
+```bash 
+cd /root/docker/dockerfiles/web_myslice
+```
+Configure endpoints for testbeds, email settings and hrn in init_script.py. For hrm replace:
+
+hrn = "onelab.myslice" with the same value that you set for $ROOT_AUTHORITY (in our example myorganizationname) adding .myslice:
+```bash 
+hrn = "myorganizationname.myslice"
+```
+
+Than you are ready to build web_myslice:
+```bash 
+docker build -t myslice/sfa_reg:latest .
+```
