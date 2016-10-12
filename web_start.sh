@@ -14,9 +14,10 @@ then
    /root/myslice/myslice/bin/myslice-web &
 
 else
+   mkdir /var/myslice
    cd /var/myslice
-   cp /etc/sfa/root_certificate/myslice.cert myslice.cert
-   cp /etc/sfa/root_certificate/myslice.pkey myslice.pkey
+   cp /etc/sfa/root_certificate/myslice.cert /var/myslice/myslice.cert
+   cp /etc/sfa/root_certificate/myslice.pkey /var/myslice/myslice.pkey
    echo "bind=all" > /etc/rethinkdb/instances.d/myslice.conf 
    #STart 
    /etc/init.d/rethinkdb start
