@@ -63,5 +63,5 @@ docker build -t myslice/sfa_reg:latest .
 ```
 And run it:
 ```bash 
- docker run --name web_myslice --link sfa_reg:sfa_reg --volumes-from sfa_reg -p 8111:8111 -p 8080:8080 -t -i myslice/web_myslice
+ docker run --name web_myslice --link sfa_reg:sfa_reg --volumes-from sfa_reg -p 8111:8111 -p 8080:8080 -p 28015:28015 -t -i myslice/web_myslice
  ```
