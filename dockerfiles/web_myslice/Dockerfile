@@ -35,9 +35,6 @@ RUN cd /root/ \
         && cd myslicelib \
         && python3.5 setup.py develop
 
-# Here we need to configure pkey and cert:
-
-
 # INSTALLING myslice #
 RUN echo "Installing myslice" \
         && cd /root/ \
