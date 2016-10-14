@@ -55,5 +55,7 @@ RUN echo "Installing myslice" \
         && webpack
 
 RUN cd /root/ && git clone https://github.com/onelab-eu/docker.git
+COPY init_script.py /tmp/
+RUN cp /tmp/init_script.py /root/myslice/myslice/__init__.py
 
 ENTRYPOINT /bin/bash /root/docker/web_start.sh
