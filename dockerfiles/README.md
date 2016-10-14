@@ -63,9 +63,9 @@ Than you are ready to build web_myslice:
 ```bash 
 docker build -t myslice/sfa_reg:latest .
 ```
-And run it:
+And run it with the same ADMIN_EMAIL and ADMIN_PASSWORD like you did while running sfa_reg 
 ```bash 
- docker run --name web_myslice --link sfa_reg:sfa_reg --volumes-from sfa_reg -p 8111:8111 -p 8080:8080 -p 28015:28015 -t -i myslice/web_myslice
+ docker run --name web_myslice --link sfa_reg:sfa_reg --volumes-from sfa_reg -p 8111:8111 -p 8080:8080 -p 28015:28015 -e "ADMIN_EMAIL=fake@fake.com" -e "ADMIN_PASSWORD=test12345" -t -i myslice/web_myslice
  ```
 And you are done! To connect web interface use IP of the docker host and port 8080 for WEB interface, 8111 for rethinkdb interface and 28015 for rethink API.
 If you would like to connect any docker image:
