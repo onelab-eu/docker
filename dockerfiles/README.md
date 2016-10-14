@@ -35,6 +35,8 @@ Build second container:
 cd ~/docker/dockerfiles/sfa_reg
 docker build -t myslice/sfa_reg:latest .
 ```
+
+
 To run this docker you need to set 3 environmental variables that will be used in a script to configure your myslice copy:
 $ROOT_AUTHORITY - [a-z] only! No special chars, nod dots, no spaces, no dash etc. are allowed. I.e.: myorganizationname
 $ADMIN_EMAIL 
@@ -65,3 +67,8 @@ And run it:
 ```bash 
  docker run --name web_myslice --link sfa_reg:sfa_reg --volumes-from sfa_reg -p 8111:8111 -p 8080:8080 -p 28015:28015 -t -i myslice/web_myslice
  ```
+And you are done! To connect web interface use IP of the docker host and port 8080 for WEB interface, 8111 for rethinkdb interface and 28015 for rethink API.
+If you would like to connect any docker image:
+```bash 
+docker exec -it <name_of_image> bash
+```
