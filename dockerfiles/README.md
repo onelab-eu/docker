@@ -61,7 +61,7 @@ hrn = "myorganizationname.myslice"
 
 Than you are ready to build web_myslice:
 ```bash 
-docker build -t myslice/sfa_reg:latest .
+docker build -t myslice/web_myslice:latest .
 ```
 And run it with the same ADMIN_EMAIL and ADMIN_PASSWORD like you did while running sfa_reg 
 ```bash 
