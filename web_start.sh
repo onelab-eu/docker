@@ -22,7 +22,7 @@ else
    
    #STart 
    /etc/init.d/rethinkdb start
-   /root/myslice/myslice/bin/db-setup
+   /root/myslice/myslice/bin/db-setup &
    
    /root/myslice/init_user.py -e $ADMIN_EMAIL -P $ADMIN_PASSWORD -k /var/myslice/myslice.pkey -p /var/myslice/myslice.pub
    
