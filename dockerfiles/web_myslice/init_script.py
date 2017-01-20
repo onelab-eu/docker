@@ -50,8 +50,9 @@ myslicelibsetup.endpoints = [
             Endpoint(url="https://sfa_reg:6080",type="Reg", timeout=10, name="OneLab Registry"),
             #Endpoint(url="https://sfa-fed4fire.pl.sophia.inria.fr:443",type="Reg")
         ]
-
-
+myslicelibsetup.registry_endpoints = [
+            Endpoint(url="https://sfa_reg:6080",type="Reg", timeout=10, name="OneLab Registry"),
+        ]
 #if os.path.exists(os.path.expanduser("~/.sfi/")):
 #    path = os.path.expanduser("~/.sfi/")
 #    pkey = path + "onelab.upmc.loic_baron.pkey"
