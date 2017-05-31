@@ -4,15 +4,8 @@ FILE=/root/docker/web_initialized
 if [ -f $FILE ];
 then
    echo "WEB was already initialized, to reinitialize it (experimental), please remove file /root/docker/web_initialized"
-   #As deamon 
-   /root/myslice/myslice/bin/myslice-live &
-   #As deamon 
-   /root/myslice/myslice/bin/myslice-monitor &
-   # As deamon 
-   /root/myslice/myslice/bin/myslice-server &
-   #As deamon
-   /root/myslice/myslice/bin/myslice-web &
-
+   sh /root/myslice/myslice/start.sh
+    
 else
    mkdir /var/myslice
    cd /var/myslice
@@ -26,13 +19,7 @@ else
    
    /root/myslice/init_user.py -e $ADMIN_EMAIL -P $ADMIN_PASSWORD -k /var/myslice/myslice.pkey -p /var/myslice/myslice.pub
    
-   /root/myslice/myslice/bin/myslice-live &
-   #As deamon 
-   /root/myslice/myslice/bin/myslice-monitor &
-   # As deamon 
-   /root/myslice/myslice/bin/myslice-server &
-   #As deamon
-   /root/myslice/myslice/bin/myslice-web &
+   sh /root/myslice/myslice/start.sh
    
    #
 
