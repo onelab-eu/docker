@@ -19,7 +19,7 @@ else
    
    /root/myslice/init_user.py -e $ADMIN_EMAIL -P $ADMIN_PASSWORD -k /var/myslice/myslice.pkey -p /var/myslice/myslice.pub
    
-   sh /root/myslice/myslice/start.sh
+   sh /root/myslice/start.sh
    
    #
 
