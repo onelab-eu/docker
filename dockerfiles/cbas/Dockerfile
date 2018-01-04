@@ -27,7 +27,7 @@ RUN cd /root/C-BAS \
         && pip install -r requirements.txt \
         && cp deploy/config.json.example deploy/config.json \
         && cp deploy/registry.json.example deploy/registry.json \
-        && cp deploy/supplimentary_fields.json.onelab deploy/supplimentary_fields.json
+        && cp deploy/supplementary_fields.json.onelab deploy/supplementary_fields.json
 
 # Generate Certificates and Admin user
 RUN /bin/bash test/creds/gen-certs.sh $HOSTNAME
